@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Objects;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 namespace PRPproto
 {
@@ -27,7 +29,12 @@ namespace PRPproto
         {
             sfdSaveBinary.Filter = "Binary files|*.bin";
             sfdSaveBinary.ShowDialog();
-            Console.WriteLine(sfdSaveBinary.FileName);
+
+            Project temp = new Project(101, "Peter");
+            Stream TestFileStream = File.Create(sfdSaveBinary.FileName);
+            BinaryFormatter serializer = new BinaryFormatter();
+            serializer.Serialize(TestFileStream, temp);
+            TestFileStream.Close();
         }
     }
 }
