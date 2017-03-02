@@ -15,7 +15,13 @@ namespace Objects
             get;
             set;
         } = 2;
+        public string str2
+        {
+            get;
+            set;
+        } // TODO null default?
 
+        // CONSTRUCTORS
         public Project()
         {
         }
@@ -24,16 +30,17 @@ namespace Objects
         {
             int1 = intin;
         }
-        public Project(int intin1, string strin1)
+        public Project(int intin1, string strin1) : this(intin1)
         {
-            int1 = intin1;
             str1 = strin1;
         }
-        public Project(int intin1, string strin1, int intin2)
+        public Project(int intin1, string strin1, int intin2) : this(intin1, strin1)
         {
-            int1 = intin1;
-            str1 = strin1;
             int2 = intin2;
+        }
+        public Project(int intin1, string strin1, int intin2, string strin2) : this(intin1, strin1, intin2)
+        {
+            str2 = strin2;
         }
     }
 }
