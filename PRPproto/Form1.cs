@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Objects;
 
 namespace PRPproto
 {
@@ -15,6 +16,18 @@ namespace PRPproto
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Project p = new Project(2, "a", 3, "4");
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            sfdSaveBinary.Filter = "Binary files|*.bin";
+            sfdSaveBinary.ShowDialog();
+            Console.WriteLine(sfdSaveBinary.FileName);
         }
     }
 }
