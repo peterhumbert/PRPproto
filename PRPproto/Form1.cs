@@ -22,7 +22,7 @@ namespace PRPproto
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Project p = new Project(215, "abc", 314);
+            // do nothing
         }
 
         private void btnSave_Click(object sender, EventArgs e)
