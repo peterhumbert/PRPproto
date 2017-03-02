@@ -30,7 +30,7 @@ namespace PRPproto
             sfdSaveBinary.Filter = "Binary files|*.bin";
             sfdSaveBinary.ShowDialog();
 
-            Project temp = new Project(101, "Peter");
+            Project temp = new Project(101, "Peter", 102);
             Stream TestFileStream = File.Create(sfdSaveBinary.FileName);
             BinaryFormatter serializer = new BinaryFormatter();
             serializer.Serialize(TestFileStream, temp);
